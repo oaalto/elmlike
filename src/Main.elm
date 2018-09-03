@@ -259,29 +259,6 @@ view model =
         )
 
 
-viewLeaf : LeafData -> Element Msg
-viewLeaf leafData =
-    Element.text (posToStr leafData.position ++ " " ++ sizeToStr leafData.size)
-
-
-posToStr : Position -> String
-posToStr pos =
-    let
-        ( x, y ) =
-            getPosition pos
-    in
-    "(" ++ String.fromInt x ++ ", " ++ String.fromInt y ++ ")"
-
-
-sizeToStr : Size -> String
-sizeToStr s =
-    let
-        ( width, height ) =
-            getSize s
-    in
-    "(" ++ String.fromInt width ++ ", " ++ String.fromInt height ++ ")"
-
-
 viewTileRow : TileRow -> Element Msg
 viewTileRow row =
     Element.row
